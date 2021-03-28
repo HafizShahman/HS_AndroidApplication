@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "727412826017",
+    "project_id": "mycv-561d7",
+    "storage_bucket": "mycv-561d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727412826017:android:a90eb1d0bebdc3bf52f5e0",
+        "android_client_info": {
+          "package_name": "com.caman.mycv_01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727412826017-mb95r2q2ad02alml9nbt14mki9ulqt98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYAM_KInkoXqhF1wBcAKJgeMhP-RVVzAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727412826017-mb95r2q2ad02alml9nbt14mki9ulqt98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
