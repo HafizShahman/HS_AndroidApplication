@@ -155,8 +155,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.addAuthStateListener(mAuthListener);
     }
 
-    /**
-     * step 6
+    /** step 6
      */
     @Override
     public void onStop() {

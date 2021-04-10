@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "729014126711",
+    "project_id": "sbrokoli-8d7e1",
+    "storage_bucket": "sbrokoli-8d7e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729014126711:android:32a4f93d492fdf96a21e72",
+        "android_client_info": {
+          "package_name": "com.caman.sbrokoli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729014126711-cm643377pi7ko166nbe1i2qin5uq2tq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVHjDsHfVBnNKrFA7-ijdiXqsg58AcmH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729014126711-cm643377pi7ko166nbe1i2qin5uq2tq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
