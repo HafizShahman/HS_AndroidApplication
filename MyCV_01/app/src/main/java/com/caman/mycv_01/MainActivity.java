@@ -3,6 +3,7 @@ package com.caman.mycv_01;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,16 +12,57 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * step 5
+     */
+    FirebaseAuth mAuth;
+    DatabaseReference mDatabase;
+    CardView cv_dashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /**
+         * step 4
+         */
+        getSupportActionBar().setTitle("Home");
+
+        protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+        /**
+         * step 6
+         */
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        /**
+         * step 7
+         */
+        cv_dashboard = findViewById(R.id.cv_dashboard);
+        /**
+         * step 8
+         */
+        cv_dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ViewCvActivity.class));
+            }
+        });
     }
 
     /**
