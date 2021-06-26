@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".activity.ProposalActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:animateLayoutChanges="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="15dp">
+
+                    <TextView
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Project Proposal"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Title"/>
+
+                        <EditText
+                            android:visibility="visible"
+                            android:id="@+id/et_title"
+                            android:inputType="textCapWords"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:hint="Title"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_title"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Objective"/>
+
+                        <EditText
+                            android:id="@+id/et_objective"
+                            android:inputType="textMultiLine"
+                            android:lines="4"
+                            android:minLines="3"
+                            android:maxLines="5"
+                            android:gravity="top|left"
+                            android:scrollbars="vertical"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Objective"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_objective"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Problem statement"/>
+
+                        <EditText
+                            android:id="@+id/et_problem_statement"
+                            android:inputType="textMultiLine"
+                            android:lines="4"
+                            android:minLines="3"
+                            android:maxLines="5"
+                            android:gravity="top|left"
+                            android:scrollbars="vertical"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Problem Statement"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_problem_statement"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Organization"/>
+
+                        <EditText
+                            android:id="@+id/et_organization"
+                            android:inputType="textCapWords"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Organization"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_organization"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Organization address"/>
+
+                        <EditText
+                            android:id="@+id/et_organization_address"
+                            android:inputType="textMultiLine"
+                            android:lines="4"
+                            android:minLines="3"
+                            android:maxLines="5"
+                            android:gravity="top|left"
+                            android:scrollbars="vertical"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Organization address"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_organization_address"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Supervisor name"/>
+
+                        <EditText
+                            android:id="@+id/et_supervisor_name"
+                            android:inputType="textCapWords"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:hint="Supervisor name"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_supervisor_name"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/ll_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Approval Status"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Status"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:textStyle="bold"
+                            android:textColor="@color/status_pending"
+                            android:gravity="center_vertical"
+                            android:text="Pending"
+                            android:id="@+id/tv_status"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Comment"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_comment"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="18dp"
+                android:paddingHorizontal="20dp">
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_cancel"
+                    android:textColor="@color/teal_200"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"/>
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_submit"
+                    android:backgroundTint="@color/purple_200"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"/>
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_unsubmit"
+                    android:backgroundTint="@color/purple_200"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unsubmit"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

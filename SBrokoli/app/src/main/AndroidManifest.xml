@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
         <provider
             android:name=".GenericFileProvider"
             android:authorities="com.uaix.mycv.provider"
@@ -36,6 +35,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".EducationListActivity" />
         </activity>
+        <activity android:name=".ReferencesListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewCvActivity"/>
+        </activity>
+
+        <activity android:name=".AchievementListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewCvActivity"/>
+        </activity>
+
+        <activity android:name=".ReferencesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ReferencesListActivity" />
+        </activity>
+
+        <activity android:name=".AchievementActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AchievementListActivity" />
+        </activity>
+
         <activity android:name=".SkillListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

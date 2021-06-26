@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".activity.ProposalDetailsActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:animateLayoutChanges="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Project Proposal"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Title"/>
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Objective"/>
+
+                        <TextView
+                            android:id="@+id/tv_objective"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Problem statement"/>
+
+                        <TextView
+                            android:id="@+id/tv_problem_statement"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Organization"/>
+
+                        <TextView
+                            android:id="@+id/tv_organization"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Organization address"/>
+
+                        <TextView
+                            android:id="@+id/tv_organization_address"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Supervisor name"/>
+
+                        <TextView
+                            android:id="@+id/tv_supervisor_name"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/ll_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Approval Status"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Status"/>
+
+                        <RadioGroup
+                            android:id="@+id/rg"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:scaleX="0.7"
+                                android:scaleY="0.7"
+                                android:textSize="18sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Approved"
+                                android:id="@+id/rb_approved"/>
+
+                            <RadioButton
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:scaleX="0.7"
+                                android:scaleY="0.7"
+                                android:textSize="18sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" Not Approved"
+                                android:id="@+id/rb_not_approved"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Comment"/>
+
+                        <EditText
+                            android:id="@+id/et_comment"
+                            android:inputType="textMultiLine"
+                            android:lines="4"
+                            android:minLines="3"
+                            android:maxLines="5"
+                            android:gravity="top|left"
+                            android:scrollbars="vertical"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Comment"
+                            android:background="@drawable/xml_bg_edittext_grey"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="18dp"
+                android:paddingHorizontal="20dp">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:textColor="@color/teal_200"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"/>
+
+                <Button
+                    android:id="@+id/btn_update"
+                    android:backgroundTint="@color/purple_200"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

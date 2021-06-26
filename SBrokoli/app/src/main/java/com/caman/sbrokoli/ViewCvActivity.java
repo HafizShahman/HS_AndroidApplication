@@ -15,14 +15,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-
 public class ViewCvActivity extends AppCompatActivity {
     /**
      * step 2
@@ -31,13 +29,13 @@ public class ViewCvActivity extends AppCompatActivity {
     DatabaseReference mDatabase;
     StorageReference storageReference;
     FirebaseStorage storage;
-    CardView cv_profile, cv_education, cv_skill;
-    TextView tv_profile_no_data, tv_education_no_data, tv_skill_no_data;
-    LinearLayout ll_profile_data, ll_education_data, ll_skill_data;
-    TextView tv_edit_profile, tv_edit_education, tv_edit_skill;
+    CardView cv_profile, cv_education, cv_skill, cv_achievement, cv_references;
+    TextView tv_profile_no_data, tv_education_no_data, tv_skill_no_data, tv_achievement_no_data, tv_references_no_data;
+    LinearLayout ll_profile_data, ll_education_data, ll_skill_data, ll_achievement_data, ll_references_data;
+    TextView tv_edit_profile, tv_edit_education, tv_edit_skill, tv_edit_achievement, tv_edit_references;
     ImageView iv_profile;
     TextView tv_full_name, tv_email, tv_address;
-    RecyclerView rv_education, rv_skill;
+    RecyclerView rv_education, rv_skill, rv_achievement, rv_references;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,21 +61,36 @@ public class ViewCvActivity extends AppCompatActivity {
         cv_profile = findViewById(R.id.cv_profile);
         cv_education = findViewById(R.id.cv_education);
         cv_skill = findViewById(R.id.cv_skill);
+        cv_achievement = findViewById(R.id.cv_achievement);
+        cv_references = findViewById(R.id.cv_references);
+
         tv_profile_no_data = findViewById(R.id.tv_profile_no_data);
         tv_education_no_data = findViewById(R.id.tv_education_no_data);
         tv_skill_no_data = findViewById(R.id.tv_skill_no_data);
+        tv_achievement_no_data = findViewById(R.id.tv_achievement_no_data);
+        tv_references_no_data = findViewById(R.id.tv_references_no_data);
+
         ll_profile_data = findViewById(R.id.ll_profile_data);
         ll_education_data = findViewById(R.id.ll_education_data);
         ll_skill_data = findViewById(R.id.ll_skill_data);
+        ll_achievement_data = findViewById(R.id.ll_achievement_data);
+        ll_references_data = findViewById(R.id.ll_references_data);
+
         tv_edit_profile = findViewById(R.id.tv_edit_profile);
         tv_edit_education = findViewById(R.id.tv_edit_education);
         tv_edit_skill = findViewById(R.id.tv_edit_skill);
+        tv_edit_achievement = findViewById(R.id.tv_edit_achievement);
+        tv_edit_references = findViewById(R.id.tv_edit_references);
+
         iv_profile = findViewById(R.id.iv_profile);
         tv_full_name = findViewById(R.id.tv_full_name);
         tv_email = findViewById(R.id.tv_email);
         tv_address = findViewById(R.id.tv_address);
+
         rv_education = findViewById(R.id.rv_education);
         rv_skill = findViewById(R.id.rv_skill);
+        rv_achievement = findViewById(R.id.rv_achievement);
+        rv_references = findViewById(R.id.rv_references);
         /**
          * step 5
          */
@@ -87,7 +100,6 @@ public class ViewCvActivity extends AppCompatActivity {
      * step 6
      */
     private void getCvData() {
-
         mDatabase.child("cv").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -95,6 +107,8 @@ public class ViewCvActivity extends AppCompatActivity {
                     boolean profile = snapshot.child("profile").exists();
                     boolean education = snapshot.child("education").exists();
                     boolean skill = snapshot.child("skill").exists();
+                    boolean achievement = snapshot.child("achievement").exists();
+                    boolean references = snapshot.child("references").exists();
                     if (profile) {
                         /**
                          * step 8
@@ -103,12 +117,10 @@ public class ViewCvActivity extends AppCompatActivity {
                         ll_profile_data.setVisibility(View.VISIBLE);
                         tv_profile_no_data.setVisibility(View.GONE);
                         setupProfile(snapshot.child("profile"));
-                        tv_edit_profile.setOnClickListener(new View.OnClickListener()
-                        {
+                        tv_edit_profile.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                startActivity(new Intent(ViewCvActivity.this,
-                                        ProfileActivity.class));
+                                startActivity(new Intent(ViewCvActivity.this, ProfileActivity.class));
                             }
                         });
                     } else {
@@ -118,8 +130,7 @@ public class ViewCvActivity extends AppCompatActivity {
                         cv_profile.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                startActivity(new Intent(ViewCvActivity.this,
-                                        ProfileActivity.class));
+                                startActivity(new Intent(ViewCvActivity.this, ProfileActivity.class));
                             }
                         });
                     }
@@ -134,8 +145,7 @@ public class ViewCvActivity extends AppCompatActivity {
                         tv_edit_education.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                startActivity(new Intent(ViewCvActivity.this,
-                                        EducationListActivity.class));
+                                startActivity(new Intent(ViewCvActivity.this, EducationListActivity.class));
                             }
                         });
                     } else {
@@ -149,7 +159,6 @@ public class ViewCvActivity extends AppCompatActivity {
                                         EducationListActivity.class));
                             }
                         });
-
                     }
                     if (skill) {
                         /**
@@ -178,7 +187,50 @@ public class ViewCvActivity extends AppCompatActivity {
                             }
                         });
                     }
+                    if (achievement){
 
+                        ll_achievement_data.setVisibility(View.VISIBLE);
+                        tv_achievement_no_data.setVisibility(View.GONE);
+                        setupAchievement(snapshot.child("achievement"));
+                        tv_edit_achievement.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(ViewCvActivity.this, AchievementListActivity.class));
+                            }
+                        });
+                    } else {
+
+                        rv_achievement.setVisibility(View.GONE);
+                        tv_achievement_no_data.setVisibility(View.VISIBLE);
+                        cv_achievement.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(ViewCvActivity.this, AchievementListActivity.class));
+                            }
+                        });
+                    }
+                    if (references){
+
+                        ll_references_data.setVisibility(View.VISIBLE);
+                        tv_references_no_data.setVisibility(View.GONE);
+                        setupReferences(snapshot.child("references"));
+                        tv_edit_references.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(ViewCvActivity.this, ReferencesListActivity.class));
+                            }
+                        });
+                    } else {
+
+                        rv_references.setVisibility(View.GONE);
+                        tv_references_no_data.setVisibility(View.VISIBLE);
+                        cv_references.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(ViewCvActivity.this, ReferencesListActivity.class));
+                            }
+                        });
+                    }
                 } else {
                     // no data at all
 // maybe new registered user
@@ -209,6 +261,22 @@ public class ViewCvActivity extends AppCompatActivity {
                                     SkillListActivity.class));
                         }
                     });
+                    rv_achievement.setVisibility(View.GONE);
+                    tv_achievement_no_data.setVisibility(View.VISIBLE);
+                    cv_achievement.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(ViewCvActivity.this, AchievementListActivity.class));
+                        }
+                    });
+                    rv_references.setVisibility(View.GONE);
+                    tv_references_no_data.setVisibility(View.VISIBLE);
+                    cv_references.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(ViewCvActivity.this, ReferencesListActivity.class));
+                        }
+                    });
                 }
             }
             @Override
@@ -221,8 +289,7 @@ public class ViewCvActivity extends AppCompatActivity {
      */
     private void setupProfile(DataSnapshot snapshot) {
         if (snapshot.child("image_url").exists()) {
-            String image_url =
-                    snapshot.child("image_url").getValue().toString().trim();
+            String image_url = snapshot.child("image_url").getValue().toString().trim();
             if (!image_url.equals("")) {
                 Glide.with(getApplicationContext())
                         .load(image_url)
@@ -240,7 +307,7 @@ public class ViewCvActivity extends AppCompatActivity {
         String state = snapshot.child("state").getValue().toString().trim();
         tv_full_name.setText(title +" " +first_name +" " +last_name);
         tv_email.setText(email);
-        tv_address.setText(address + "\n" + postcode +" " + city +"\n" + state);
+        tv_address.setText(address +"\n" +postcode +" " +city +"\n" +state);
     }
     /**
      * step 11
@@ -251,12 +318,10 @@ public class ViewCvActivity extends AppCompatActivity {
         for (final DataSnapshot snapshot : dataSnapshot.getChildren()) {
             Education education = new Education();
             education.setId(snapshot.getKey());
-
             education.setSchool(snapshot.child("school").getValue().toString().trim());
             education.setLevel(snapshot.child("level").getValue().toString().trim());
 
             education.setStart_date(snapshot.child("start_date").getValue().toString().trim());
-
             education.setEnd_date(snapshot.child("end_date").getValue().toString().trim());
             educations.add(education);
         }
@@ -264,10 +329,10 @@ public class ViewCvActivity extends AppCompatActivity {
                 LinearLayoutManager(ViewCvActivity.this);
         rv_education.setLayoutManager(linearLayoutManager);
         rv_education.setHasFixedSize(true);
-        EducationAdapter adapter = new EducationAdapter(ViewCvActivity.this, educations, mDatabase, mAuth);
+        EducationAdapter adapter = new EducationAdapter(ViewCvActivity.this, educations,
+                mDatabase, mAuth);
         rv_education.setAdapter(adapter);
     }
-
     /**
      * step 13
      */
@@ -289,5 +354,44 @@ public class ViewCvActivity extends AppCompatActivity {
         SkillAdapter adapter = new SkillAdapter(ViewCvActivity.this, skills, mDatabase,
                 mAuth);
         rv_skill.setAdapter(adapter);
+    }
+
+    private void setupAchievement(DataSnapshot dataSnapshot){
+        ArrayList<Achievement> achievements = new ArrayList<>();
+        achievements.clear();
+        for (final DataSnapshot snapshot : dataSnapshot.getChildren()) {
+            Achievement achievement = new Achievement();
+            achievement.setId(snapshot.getKey());
+            achievement.setTitle(snapshot.child("title").getValue().toString().trim());
+            achievement.setLevel(snapshot.child("level").getValue().toString().trim());
+            achievement.setYear(snapshot.child("year").getValue().toString().trim());
+            achievement.setType(snapshot.child("type").getValue().toString().trim());
+            achievements.add(achievement);
+        }
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewCvActivity.this);
+        rv_achievement.setLayoutManager(linearLayoutManager);
+        rv_achievement.setHasFixedSize(true);
+        AchievementAdapter adapter = new AchievementAdapter(ViewCvActivity.this, achievements, mDatabase, mAuth);
+        rv_achievement.setAdapter(adapter);
+    }
+
+    private void setupReferences(DataSnapshot dataSnapshot){
+        ArrayList<References> referencess = new ArrayList<>();
+        referencess.clear();
+        for (final DataSnapshot snapshot : dataSnapshot.getChildren()) {
+            References references = new References();
+            references.setId(snapshot.getKey());
+            references.setName(snapshot.child("name").getValue().toString().trim());
+            references.setDesignation(snapshot.child("designation").getValue().toString().trim());
+            references.setCompany(snapshot.child("company").getValue().toString().trim());
+            references.setPhone(snapshot.child("phone").getValue().toString().trim());
+            references.setEmail(snapshot.child("email").getValue().toString().trim());
+            referencess.add(references);
+        }
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewCvActivity.this);
+        rv_references.setLayoutManager(linearLayoutManager);
+        rv_references.setHasFixedSize(true);
+        ReferencesAdapter adapter = new ReferencesAdapter(ViewCvActivity.this, referencess, mDatabase, mAuth);
+        rv_references.setAdapter(adapter);
     }
 }

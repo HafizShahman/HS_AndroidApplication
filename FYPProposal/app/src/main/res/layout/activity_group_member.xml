@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".activity.GroupMemberActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_group_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:text="Group no."
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_group_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:drawableTint="@color/purple_200"
+                        android:gravity="center_vertical"
+                        android:text="2"
+                        android:textColor="@color/purple_500"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Group Leader"
+                        android:textColor="@color/purple_500" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Matric No."
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_leader_matric"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/xml_bg_edittext_grey"
+                            android:hint="Matric No."
+                            android:inputType="textCapCharacters"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_leader_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/xml_bg_edittext_grey"
+                            android:hint="Name"
+                            android:inputType="textCapWords"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Class"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <com.jaredrummler.materialspinner.MaterialSpinner
+                            android:id="@+id/sp_leader_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:theme="@style/spinnerTheme"
+                            app:ms_background_color="@color/light_background"
+                            app:ms_hint="Select class"
+                            app:ms_hint_color="@android:color/darker_gray"
+                            app:ms_padding_bottom="0dp"
+                            app:ms_padding_left="15dp"
+                            app:ms_padding_right="15dp"
+                            app:ms_padding_top="0dp"
+                            app:ms_text_color="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Phone No."
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_leader_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/xml_bg_edittext_grey"
+                            android:hint="Phone No."
+                            android:inputType="phone"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_member1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:text="Group member #1"
+                    android:textColor="@color/purple_500" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:drawableTint="@color/purple_200"
+                    android:gravity="center_vertical"
+                    android:text="+ Add"
+                    android:textColor="@color/purple_200" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_member1_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="15dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Matric No."
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/et_member1_matric"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/xml_bg_edittext_grey"
+                        android:hint="Matric No."
+                        android:inputType="textCapCharacters"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/et_member1_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/xml_bg_edittext_grey"
+                        android:hint="Name"
+                        android:inputType="textCapWords"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Class"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <com.jaredrummler.materialspinner.MaterialSpinner
+                        android:id="@+id/sp_member1_class"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:theme="@style/spinnerTheme"
+                        app:ms_background_color="@color/light_background"
+                        app:ms_hint="Select class"
+                        app:ms_hint_color="@android:color/darker_gray"
+                        app:ms_padding_bottom="0dp"
+                        app:ms_padding_left="15dp"
+                        app:ms_padding_right="15dp"
+                        app:ms_padding_top="0dp"
+                        app:ms_text_color="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pnone No."
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/et_member1_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/xml_bg_edittext_grey"
+                        android:hint="Phone No."
+                        android:inputType="phone"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_member2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/white"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:text="Group memeber #2"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:drawableTint="@color/purple_200"
+                        android:gravity="center_vertical"
+                        android:text="+ Add"
+                        android:textColor="@color/purple_200" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_member2_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingBottom="15dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Matric No."
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_member2_matric"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/xml_bg_edittext_grey"
+                            android:hint="Matric No."
+                            android:inputType="textCapCharacters"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_member2_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/xml_bg_edittext_grey"
+                            android:hint="Name"
+                            android:inputType="textCapWords"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Class"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <com.jaredrummler.materialspinner.MaterialSpinner
+                            android:id="@+id/sp_member2_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:theme="@style/spinnerTheme"
+                            app:ms_background_color="@color/light_background"
+                            app:ms_hint="Select class"
+                            app:ms_hint_color="@android:color/darker_gray"
+                            app:ms_padding_bottom="0dp"
+                            app:ms_padding_left="15dp"
+                            app:ms_padding_right="15dp"
+                            app:ms_padding_top="0dp"
+                            app:ms_text_color="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Phone No."
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_member2_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/xml_bg_edittext_grey"
+                            android:hint="Phone No."
+                            android:inputType="phone"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Cancel"
+                    android:textColor="@color/purple_200" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/purple_200"
+                    android:text="Save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

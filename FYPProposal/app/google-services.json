@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517310428124",
+    "project_id": "fyp-proposal-20f48",
+    "storage_bucket": "fyp-proposal-20f48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517310428124:android:70064e28aae143dbd8d519",
+        "android_client_info": {
+          "package_name": "com.caluli.fypproposal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517310428124-dbuq1ghea1blrerkrk9p3nfa1813pts8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa6qwzNHsms3VUeOQU-OW-Goqyv3R9FoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517310428124-dbuq1ghea1blrerkrk9p3nfa1813pts8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

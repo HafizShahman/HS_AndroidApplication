@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SBrokoli</string>
     <string name="siput_brokoli">Siput Brokoli</string>
-    <string name="_2021_hafiz_shahman_sb_tech_nall_rights_reserved">© 2021 Hafiz Shahman | SB Tech\nAll Rights Reserved.</string>
+    <string name="copyright">© 2021 Hafiz Shahman | SB Tech<br/>All Rights Reserved.</string>
     <string name="todo">TODO</string>
+    <string name="no_data_recorded">No data recorded.<br/>Click the + button to add new data.</string>
 </resources>

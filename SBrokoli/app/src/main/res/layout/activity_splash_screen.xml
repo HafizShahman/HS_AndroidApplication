@@ -42,7 +42,7 @@
         android:textSize="15sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="© 2021 Hafiz Shahman | SB Tech \nAll Rights Reserved"/>
+        android:text="@string/copyright"/>
 
 
 </RelativeLayout>
